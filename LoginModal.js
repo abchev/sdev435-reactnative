@@ -4,7 +4,6 @@ import { Button } from '@react-native-material/core'
 import appStyles from './Styles'
 
 export default function LoginModal(props) {
-    const [modalVisible, setModalVisible] = useState(props.visible || false)
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const passwordInputRef = useRef()
@@ -34,7 +33,6 @@ export default function LoginModal(props) {
           <TextInput 
               ref={passwordInputRef}
               onChangeText={e => setPassword(e)}
-              onSubmitEditing={() => username !== "" && password !== "" ? props.onLogin(username, password) : console.log("Username or password is empty")}
               placeholder="Password"
               value={password}
               autoCorrect={false}
